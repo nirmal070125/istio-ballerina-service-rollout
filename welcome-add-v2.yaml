@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: welcome-v2
+  labels:
+    app: welcome
+    version: v2
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: welcome
+        version: v2
+    spec:
+      containers:
+      - name: welcome
+        image: welcome:v2.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9090
+---

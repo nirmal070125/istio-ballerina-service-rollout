@@ -1,0 +1,40 @@
+##################################################################################################
+# Welcome service
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: welcome
+  labels:
+    app: welcome
+    service: welcome
+spec:
+  ports:
+  - port: 9090
+    name: http
+  selector:
+    app: welcome
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: welcome-v1
+  labels:
+    app: welcome
+    version: v1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: welcome
+        version: v1
+    spec:
+      containers:
+      - name: welcome
+        image: welcome:v1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9090
+---
+

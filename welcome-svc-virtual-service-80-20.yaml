@@ -1,0 +1,23 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: welcome
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - welcome-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /welcome
+    route:
+    - destination:
+        host: welcome
+        subset: v1
+      weight: 80
+    - destination:
+        host: welcome
+        subset: v2
+      weight: 20
+---
