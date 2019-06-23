@@ -182,7 +182,7 @@ kubectl apply -f welcome-svc-virtual-service-80-20.yaml
 
 Open your browser and enter the url: `http://<minikubeip or external ip>:<31380|80>/welcome/Chicago`
 
-        - you should see the v2 (*WSO2* instead of *WSO*) appearing time to time.
+You should see the v2 (*WSO2* instead of *WSO*) appearing time to time.
     
 Once you are satisfied with the v2, we'll set the traffic rules to route all the traffic to v2
 ```bash
