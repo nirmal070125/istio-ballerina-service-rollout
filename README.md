@@ -56,7 +56,7 @@ kube-scheduler-minikube            1/1     Running            0          4m41s
 storage-provisioner                1/1     Running            0          5m48s
 ```
 
-**NOTE: that the coredns pods are not starting up properly due to the loop crash issue **
+**NOTE: that the coredns pods are not starting up properly due to the loop crash issue**
 
 ### Fix loop crash of coredns 
 (solve the issue with loop back crash: https://github.com/kubernetes/kubeadm/issues/998#issuecomment-456824912)
@@ -66,7 +66,7 @@ kubectl -n kube-system edit configmap coredns
 # comment the line containing "loop", save and exit (:x).
 kubectl -n kube-system delete pod -l k8s-app=kube-dns
 ```
-**NOTE: now you shouldn't see the above error **
+**NOTE: now you shouldn't see the above error**
 
 ```bash
 # kubectl get pods -n kube-system
@@ -157,7 +157,7 @@ kubectl get svc -n istio-system | grep istio-ingressgateway
   istio-ingressgateway     LoadBalancer   10.99.19.6       <pending>          15020:31775/TCP,80:31380/TCP,443:31390/TCP,31400:31400/TCP,15029:31958/TCP,15030:31214/TCP,15031:32565/TCP,15032:32240/TCP,15443:31331/TCP   119m
 ```
 
-**NOTE: if external ip is "<pending>", use port as "31380", if there's an external IP assigned, use port as "80" **
+**NOTE: if external ip is "<pending>", use port as "31380", if there's an external IP assigned, use port as "80"**
     
 Open your browser and enter the url: `http://<minikubeip or external ip>:<31380|80>/welcome/Chicago`
       
