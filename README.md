@@ -157,7 +157,7 @@ kubectl get svc -n istio-system | grep istio-ingressgateway
   istio-ingressgateway     LoadBalancer   10.99.19.6       <pending>          15020:31775/TCP,80:31380/TCP,443:31390/TCP,31400:31400/TCP,15029:31958/TCP,15030:31214/TCP,15031:32565/TCP,15032:32240/TCP,15443:31331/TCP   119m
 ```
 
-**NOTE: if external ip is "<pending>", use port as "31380", if there's an external IP assigned, use port as "80"**
+**NOTE: if the external ip is "pending", use port as "31380", if there's an external IP assigned, use port as "80"**
     
 Open your browser and enter the url: `http://<minikubeip or external ip>:<31380|80>/welcome/Chicago`
       
