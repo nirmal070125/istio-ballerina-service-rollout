@@ -1,6 +1,6 @@
 # istio-ballerina-service-rollout
 
-Following instrucctions are tested in Ubuntu 18.04. You should be able to skip certain steps, if you have them installed already. 
+Following instructions are tested in Ubuntu 18.04. You should be able to skip certain steps, if you have them installed already. 
 
 ## install docker
 ```bash
